@@ -17,13 +17,13 @@ response = client.chat.completions.create(
     {"role": "system", "content": "Complete the following prefix"},
     {"role": "user", "content": prompt}
   ],
-  temperature = 1.4,
+  temperature = 1.8,
   max_tokens=20
 )
 
 ### Display
 st.write(
-    "Creative:" + response.choices[0].message.content
+    "Creative: " + response.choices[0].message.content
 )
 
 
@@ -35,11 +35,11 @@ response = client.chat.completions.create(
     {"role": "system", "content": "Complete the following prefix"},
     {"role": "user", "content": prompt}
   ],
-  temperature = 0.5,
+  temperature = 0.2,
   max_tokens=20
 )
 
 ### Display
 st.write(
-    "Predictable:" + response.choices[0].message.content
+    "Predictable: " + response.choices[0].message.content
 )
