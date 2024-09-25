@@ -17,10 +17,29 @@ response = client.chat.completions.create(
     {"role": "system", "content": "Complete the following prefix"},
     {"role": "user", "content": prompt}
   ],
+  temperature = 1.4,
   max_tokens=20
 )
 
 ### Display
 st.write(
-    response.choices[0].message.content
+    "Creative:" + response.choices[0].message.content
+)
+
+
+### OpenAI stuff
+client = OpenAI()
+response = client.chat.completions.create(
+  model="gpt-4o-mini",
+  messages=[
+    {"role": "system", "content": "Complete the following prefix"},
+    {"role": "user", "content": prompt}
+  ],
+  temperature = 0.5,
+  max_tokens=20
+)
+
+### Display
+st.write(
+    "Predictable:" + response.choices[0].message.content
 )
