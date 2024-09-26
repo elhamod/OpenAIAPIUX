@@ -9,7 +9,7 @@ prompt = st.text_input("What is your prompt today?", "Damascus is")
 ### Load your API Key
 os.environ["OPENAI_API_KEY"] = st.secrets["OpenAIkey"]
 
-### OpenAI stuff
+### OpenAI stuff: Creative: High temperature
 client = OpenAI()
 response = client.chat.completions.create(
   model="gpt-4o-mini",
@@ -27,7 +27,7 @@ st.write(
 )
 
 
-### OpenAI stuff
+### OpenAI stuff: Predictable: Low temperature
 client = OpenAI()
 response = client.chat.completions.create(
   model="gpt-4o-mini",
